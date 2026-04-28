@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prathmesh Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#0a0f1c;
+  color:white;
+}
+
+/* HERO SECTION */
+.hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:60px 10%;
+}
+
+.hero-text h1{
+  font-size:60px;
+}
+
+.hero-text span{
+  background:linear-gradient(90deg,#4facfe,#d946ef);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero-text p{
+  margin-top:20px;
+  color:#9ca3af;
+}
+
+.buttons{
+  margin-top:25px;
+}
+
+.btn{
+  padding:12px 20px;
+  margin-right:10px;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+}
+
+.primary{
+  background:linear-gradient(90deg,#4facfe,#d946ef);
+}
+
+.secondary{
+  background:transparent;
+  border:1px solid #555;
+  color:white;
+}
+
+/* IMAGE */
+.hero img{
+  width:280px;
+  border-radius:20px;
+  box-shadow:0 0 40px rgba(217,70,239,0.5);
+}
+
+/* ABOUT */
+.about{
+  padding:60px 10%;
+}
+
+.about h2{
+  margin-bottom:20px;
+}
+
+.about p{
+  color:#9ca3af;
+  max-width:600px;
+}
+
+/* SKILLS */
+.skills{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:15px;
+  margin-top:30px;
+}
+
+.skill-card{
+  background:#111827;
+  padding:15px;
+  border-radius:10px;
+  text-align:center;
+  border:1px solid #1f2937;
+}
+
+/* CONTACT */
+.contact{
+  padding:60px 10%;
+}
+
+input,textarea{
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+  border-radius:5px;
+  border:none;
+}
+
+button.submit{
+  background:linear-gradient(90deg,#4facfe,#d946ef);
+  color:rgb(75, 70, 70);
+  font-weight:bold;
+}
+
+/* SIDEBAR */
+.sidebar{
+  position:fixed;
+  right:20px;
+  top:40%;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.sidebar a{
+  background:#111827;
+  padding:10px;
+  border-radius:50%;
+  text-align:center;
+  text-decoration:none;
+  color:white;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero img{
+    margin-top:20px;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Hi, I'm <br><span>Prathmesh Pagare</span></h1>
+    <p>Full Stack Developer | IT Student</p>
+
+    <div class="buttons">
+      <button class="btn primary">View Projects</button>
+      <button class="btn secondary">Download Resume</button>
+    </div>
+  </div>
+
+  <img src="./profile.jpg" alt="my photo">
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <h2>About Me</h2>
+  <p>
+    I am an IT engineering student passionate about building scalable web applications,
+    clean UI, and solving real-world problems using modern technologies.
+  </p>
+
+  <div class="skills">
+    <div class="skill-card">HTML</div>
+    <div class="skill-card">CSS</div>
+    <div class="skill-card">JavaScript</div>
+    <div class="skill-card">React</div>
+    <div class="skill-card">Node.js</div>
+    <div class="skill-card">GitHub</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+  <h2>Contact Me</h2>
+
+  <form action="https://formsubmit.co/your-email@gmail.com" method="POST">
+    <input type="text" placeholder="Your Name" name="name" required>
+    <input type="email" placeholder="Your Email" name="email" required>
+    <textarea placeholder="Message" name="message"></textarea>
+    <button class="submit">Send</button>
+  </form>
+</section>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <a href="#">🏠</a>
+  <a href="#about">👤</a>
+  <a href="#contact">✉️</a>
+</div>
+
+</body>
+</html>  
