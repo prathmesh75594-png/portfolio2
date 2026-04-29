@@ -15,9 +15,25 @@
   font-family:'Poppins',sans-serif;
 }
 
+/* 🔥 Animated Background */
 body{
-  background:#0a0f1c;
+  background: linear-gradient(-45deg, #0a0f1c, #1e293b, #111827, #0a0f1c);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
   color:white;
+}
+
+@keyframes gradient{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* Scroll animation */
+section{
+  opacity:0;
+  transform:translateY(50px);
+  transition:0.6s ease;
 }
 
 /* HERO */
@@ -43,7 +59,7 @@ body{
   color:#9ca3af;
 }
 
-/* SOCIAL LINKS */
+/* SOCIAL */
 .socials{
   margin-top:20px;
 }
@@ -114,6 +130,12 @@ body{
   padding:20px;
   border-radius:10px;
   margin-top:20px;
+  transition:0.3s;
+}
+
+.project-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 30px rgba(79,172,254,0.3);
 }
 
 /* SKILLS */
@@ -130,6 +152,12 @@ body{
   border-radius:10px;
   text-align:center;
   border:1px solid #1f2937;
+  transition:0.3s;
+}
+
+.skill-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 20px rgba(79,172,254,0.3);
 }
 
 /* CONTACT */
@@ -170,6 +198,13 @@ button.submit{
   color:white;
 }
 
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  color:#9ca3af;
+}
+
 /* MOBILE */
 @media(max-width:768px){
   .hero{
@@ -190,17 +225,24 @@ button.submit{
 <section class="hero">
   <div class="hero-text">
     <h1>Hi, I'm <br><span>Prathmesh Pagare</span></h1>
-    <p>Full Stack Developer | IT Student</p>
+
+    <!-- Typing effect -->
+    <p id="typing"></p>
 
     <div class="buttons">
-      <button class="btn primary">View Projects</button>
-      <button class="btn secondary">Download Resume</button>
+      <button class="btn primary" onclick="document.querySelector('.projects').scrollIntoView({behavior:'smooth'})">
+        View Projects
+      </button>
+
+      <a href="resume.pdf" download>
+        <button class="btn secondary">Download Resume</button>
+      </a>
     </div>
 
-    <!-- SOCIAL LINKS -->
+    <!-- SOCIAL LINKS (FIXED) -->
     <div class="socials">
-      <a href="https://github.com/https://github.com/prathmesh75594-png" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/in/https://linkedin.com/in/prathmesh-pagare-123456" target="_blank">LinkedIn</a>
+      <a href="https://github.com/prathmesh75594-png" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
     </div>
 
   </div>
@@ -233,11 +275,14 @@ button.submit{
   <div class="project-card">
     <h3>Portfolio Website</h3>
     <p>Personal portfolio built using HTML, CSS, JS</p>
+    <a href="#" target="_blank">Live Demo</a> |
+    <a href="#" target="_blank">GitHub</a>
   </div>
 
   <div class="project-card">
     <h3>Attendance System</h3>
     <p>Python Tkinter based project</p>
+    <a href="#" target="_blank">GitHub</a>
   </div>
 </section>
 
@@ -260,5 +305,40 @@ button.submit{
   <a href="#contact">✉️</a>
 </div>
 
+<!-- FOOTER -->
+<footer>
+  © 2026 Prathmesh Pagare | Built with ❤️
+</footer>
+
+<!-- JS -->
+<script>
+// Typing effect
+const text = "Full Stack Developer | IT Student";
+let i = 0;
+function type(){
+  if(i < text.length){
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(type, 40);
+  }
+}
+type();
+
+// Scroll animation
+const elements = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+  elements.forEach(el => {
+    const position = el.getBoundingClientRect().top;
+    const screen = window.innerHeight;
+
+    if(position < screen - 100){
+      el.style.opacity = "1";
+      el.style.transform = "translateY(0)";
+    }
+  });
+});
+</script>
+
 </body>
-</html> 
+</html>
