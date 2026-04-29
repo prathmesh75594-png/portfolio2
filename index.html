@@ -20,7 +20,7 @@ body{
   color:white;
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero{
   display:flex;
   justify-content:space-between;
@@ -43,6 +43,28 @@ body{
   color:#9ca3af;
 }
 
+/* SOCIAL LINKS */
+.socials{
+  margin-top:20px;
+}
+
+.socials a{
+  margin-right:15px;
+  text-decoration:none;
+  color:white;
+  font-weight:500;
+  border:1px solid #444;
+  padding:8px 15px;
+  border-radius:6px;
+  transition:0.3s;
+}
+
+.socials a:hover{
+  background:#4facfe;
+  color:black;
+}
+
+/* BUTTONS */
 .buttons{
   margin-top:25px;
 }
@@ -77,30 +99,22 @@ body{
   padding:60px 10%;
 }
 
-.about h2{
-  margin-bottom:20px;
-}
-
 .about p{
   color:#9ca3af;
   max-width:600px;
 }
-  <section class="projects">
-  <h2>My Projects</h2>
 
-  <div class="project-card">
-    <h3>Portfolio Website</h3>
-    <p>Personal portfolio built using HTML, CSS, JS</p>
-    <a href="#">Live Demo</a>
-    <a href="#">GitHub</a>
-  </div>
+/* PROJECTS */
+.projects{
+  padding:60px 10%;
+}
 
-  <div class="project-card">
-    <h3>Attendance System</h3>
-    <p>Python Tkinter based student attendance system</p>
-    <a href="#">GitHub</a>
-  </div>
-</section>
+.project-card{
+  background:#111827;
+  padding:20px;
+  border-radius:10px;
+  margin-top:20px;
+}
 
 /* SKILLS */
 .skills{
@@ -133,7 +147,7 @@ input,textarea{
 
 button.submit{
   background:linear-gradient(90deg,#4facfe,#d946ef);
-  color:rgb(75, 70, 70);
+  color:black;
   font-weight:bold;
 }
 
@@ -168,7 +182,6 @@ button.submit{
   }
 }
 </style>
-
 </head>
 
 <body>
@@ -183,13 +196,20 @@ button.submit{
       <button class="btn primary">View Projects</button>
       <button class="btn secondary">Download Resume</button>
     </div>
+
+    <!-- SOCIAL LINKS -->
+    <div class="socials">
+      <a href="https://github.com/YOUR-USERNAME" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank">LinkedIn</a>
+    </div>
+
   </div>
 
   <img src="./profile.jpg" alt="my photo">
 </section>
 
 <!-- ABOUT -->
-<section class="about">
+<section class="about" id="about">
   <h2>About Me</h2>
   <p>
     I am an IT engineering student passionate about building scalable web applications,
@@ -206,8 +226,23 @@ button.submit{
   </div>
 </section>
 
+<!-- PROJECTS -->
+<section class="projects">
+  <h2>My Projects</h2>
+
+  <div class="project-card">
+    <h3>Portfolio Website</h3>
+    <p>Personal portfolio built using HTML, CSS, JS</p>
+  </div>
+
+  <div class="project-card">
+    <h3>Attendance System</h3>
+    <p>Python Tkinter based project</p>
+  </div>
+</section>
+
 <!-- CONTACT -->
-<section class="contact">
+<section class="contact" id="contact">
   <h2>Contact Me</h2>
 
   <form action="https://formsubmit.co/prathmeshpagare755@gmail.com" method="POST">
@@ -226,4 +261,4 @@ button.submit{
 </div>
 
 </body>
-</html>  
+</html> 
